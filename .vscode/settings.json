@@ -1,0 +1,122 @@
+{
+  "commit-message-editor.staticTemplate": [
+    "# <타입>: <제목> 형식으로 작성하며 제목은 최대 50글자 정도로만 입력",
+    "# 제목을 아랫줄에 작성, 제목 끝에 마침표 금지, 무엇을 했는지 명확하게 작성",
+    "",
+    "################",
+    "# [✨feat]: 새로운 기능 추가",
+    "# [🐛fix]: 버그 수정",
+    "# [📝docs]: 문서 수정",
+    "# [♻️refactor]: 코드 리팩토링 (기능에 영향을 주지 않을 때)",
+    "# [💄style]: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우",
+    "# [🎨design]: CSS 등 사용자 UI 디자인 변경",
+    "# [🔨chore]: 빌드 부분 혹은 패키지 매니저 수정사항",
+    "# [🔥remove]: 파일을 삭제하는 작업만 수행하는 경우",
+    "# [🚚rename]: 파일 혹은 폴더명 수정하거나 옮기는 경우",
+    "# [💬comment]: 필요한 주석 추가 및 변경",
+    "################"
+  ],
+  "commit-message-editor.dynamicTemplate": [
+    "{type}{scope}: {description}",
+    "",
+    "{body}",
+    "",
+    "{breaking_change}{footer}"
+  ],
+  "commit-message-editor.tokens": [
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "enum",
+      "options": [
+        {
+          "label": "---",
+          "value": ""
+        },
+        {
+          "label": "build",
+          "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+        },
+        {
+          "label": "chore",
+          "description": "Updating grunt tasks etc; no production code change"
+        },
+        {
+          "label": "ci",
+          "description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+        },
+        {
+          "label": "docs",
+          "description": "Documentation only changes"
+        },
+        {
+          "label": "feat",
+          "description": "A new feature"
+        },
+        {
+          "label": "fix",
+          "description": "A bug fix"
+        },
+        {
+          "label": "perf",
+          "description": "A code change that improves performance"
+        },
+        {
+          "label": "refactor",
+          "description": "A code change that neither fixes a bug nor adds a feature"
+        },
+        {
+          "label": "revert"
+        },
+        {
+          "label": "style",
+          "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+        },
+        {
+          "label": "test",
+          "description": "Adding missing tests or correcting existing tests"
+        }
+      ],
+      "description": "Type of changes"
+    },
+    {
+      "label": "Scope",
+      "name": "scope",
+      "description": "A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., \"feat(parser): add ability to parse arrays\".",
+      "type": "text",
+      "multiline": false,
+      "prefix": "(",
+      "suffix": ")"
+    },
+    {
+      "label": "Short description",
+      "name": "description",
+      "description": "Short description in the subject line.",
+      "type": "text",
+      "multiline": false
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "description": "Optional body",
+      "type": "text",
+      "multiline": true,
+      "lines": 5,
+      "maxLines": 10
+    },
+    {
+      "label": "Breaking change",
+      "name": "breaking_change",
+      "type": "boolean",
+      "value": "BREAKING CHANGE: ",
+      "default": false
+    },
+    {
+      "label": "Footer",
+      "name": "footer",
+      "description": "Optional footer",
+      "type": "text",
+      "multiline": true
+    }
+  ]
+}
