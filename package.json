@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "husky install",
     "prepare": "husky",
-    "lint:fix": "eslint ./**/*.{js,jsx,ts,tsx} --cache --fix"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "next": "14.1.4",
@@ -36,9 +35,8 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
+    "**/*.{tsx,ts,jsx,js}": [
+      "prettier --write"
     ]
   }
 }
